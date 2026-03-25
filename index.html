@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnostic Express Instagram — 97€</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fff9f9;
+    --warm-white: #fff9f9;
+    --coral: #7d2500;
+    --coral-light: #b26151;
+    --coral-pale: #f1d8d8;
+    --brown: #3a1200;
+    --brown-mid: #7d2500;
+    --brown-light: #b26151;
+    --sand: #f1d8d8;
+    --sand-light: #faf0f0;
+    --green: #7d2500;
+    --green-light: #f1d8d8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 248, 242, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--sand);
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brown);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--coral); }
+
+  .nav-cta {
+    background: var(--coral);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .nav-cta:hover {
+    background: var(--coral-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(255, 107, 71, 0.3);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-blob {
+    position: absolute;
+    top: -100px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, rgba(255,107,71,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: blobFloat 8s ease-in-out infinite;
+  }
+
+  .hero-blob-2 {
+    position: absolute;
+    bottom: -80px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(61,170,114,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: blobFloat 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes blobFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -20px) scale(1.05); }
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--coral-pale);
+    color: var(--coral);
+    border: 1px solid rgba(255,107,71,0.2);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--coral);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--coral);
+    position: relative;
+  }
+
+  h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0; right: 0;
+    height: 3px;
+    background: var(--coral);
+    opacity: 0.3;
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--brown-mid);
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s 0.2s ease both;
+    max-width: 520px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--coral);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(255, 107, 71, 0.35);
+  }
+
+  .btn-primary:hover {
+    background: var(--coral-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(255, 107, 71, 0.4);
+  }
+
+  .btn-primary .arrow {
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  .hero-note {
+    font-size: 0.82rem;
+    color: var(--brown-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ── HERO CARD ── */
+  .hero-card {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(45, 31, 20, 0.1), 0 4px 16px rgba(45, 31, 20, 0.05);
+    animation: fadeUp 0.6s 0.2s ease both;
+    border: 1px solid var(--sand);
+    position: relative;
+  }
+
+  .hero-card::before {
+    content: '✦';
+    position: absolute;
+    top: -14px;
+    right: 28px;
+    background: var(--coral);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+  }
+
+  .card-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brown-light);
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .card-platform {
+    font-size: 0.85rem;
+    color: var(--brown-light);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .card-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--brown-mid);
+  }
+
+  .card-item-icon {
+    width: 22px;
+    height: 22px;
+    background: var(--green-light);
+    color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .card-divider {
+    height: 1px;
+    background: var(--sand-light);
+    margin: 20px 0;
+  }
+
+  .card-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-price {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--brown);
+    letter-spacing: -0.04em;
+  }
+
+  .card-price span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--brown-light);
+  }
+
+  .card-delivery {
+    font-size: 0.8rem;
+    color: var(--brown-light);
+    text-align: right;
+  }
+
+  .card-btn {
+    width: 100%;
+    background: var(--coral);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  .card-btn:hover {
+    background: var(--coral-light);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 107, 71, 0.35);
+  }
+
+  /* ── SOCIAL PROOF STRIP ── */
+  .proof-strip {
+    background: #7d2500;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.88rem;
+  }
+
+  .proof-icon {
+    font-size: 1.1rem;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--coral);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .section-sub {
+    font-family: 'Lora', serif;
+    color: var(--brown-mid);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 48px;
+  }
+
+  /* ── PROBLEM ── */
+  .problem {
+    background-color: #faf0f0;
+    position: relative;
+  }
+
+  .problem::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1490750967868-88df5691cc06?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .problem .section-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .pain-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    border: 1px solid var(--sand);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .pain-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(45,31,20,0.08);
+  }
+
+  .pain-emoji {
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .pain-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .pain-card p {
+    font-size: 0.88rem;
+    color: var(--brown-mid);
+    line-height: 1.6;
+  }
+
+  /* ── WHAT YOU GET ── */
+  .deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .deliverable {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid var(--sand);
+    display: flex;
+    gap: 18px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .deliverable::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--coral);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .deliverable:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(45,31,20,0.08);
+  }
+
+  .deliverable:hover::after { opacity: 1; }
+
+  .deliverable-num {
+    width: 44px;
+    height: 44px;
+    background: var(--coral-pale);
+    color: var(--coral);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .deliverable-body h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .deliverable-body p {
+    font-size: 0.87rem;
+    color: var(--brown-mid);
+    line-height: 1.6;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how {
+    background: var(--warm-white);
+    position: relative;
+  }
+
+  .how::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1490750967868-88df5691cc06?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .how .section-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 680px;
+  }
+
+  .step {
+    display: flex;
+    gap: 28px;
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  .step:last-child { padding-bottom: 0; }
+
+  .step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .step-line {
+    flex: 1;
+    width: 2px;
+    background: var(--sand);
+    margin-top: 8px;
+  }
+
+  .step:last-child .step-line { display: none; }
+
+  .step-body {
+    padding-top: 10px;
+  }
+
+  .step-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .step-body p {
+    font-size: 0.9rem;
+    color: var(--brown-mid);
+    line-height: 1.6;
+  }
+
+  .step-badge {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-top: 8px;
+  }
+
+  /* ── PRICING ── */
+  .pricing {
+    background: #3a1200;
+    overflow: hidden;
+  }
+
+  .pricing .section-title,
+  .pricing .section-sub,
+  .pricing .section-tag { color: rgba(255,255,255,0.9); }
+
+  .pricing .section-sub { color: rgba(255,255,255,0.65); }
+
+  .pricing-card {
+    background: white;
+    border-radius: 28px;
+    padding: 48px;
+    max-width: 560px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-blob {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(ellipse at center, rgba(255,107,71,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .pricing-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .pricing-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--coral);
+    margin-bottom: 8px;
+  }
+
+  .pricing-big {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: var(--brown);
+  }
+
+  .pricing-big sup {
+    font-size: 1.8rem;
+    font-weight: 700;
+    vertical-align: top;
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  .pricing-once {
+    font-size: 0.85rem;
+    color: var(--brown-light);
+    margin-top: 6px;
+  }
+
+  .pricing-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 28px 0;
+  }
+
+  .pricing-feat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--brown-mid);
+  }
+
+  .check {
+    width: 22px;
+    height: 22px;
+    background: #f1d8d8;
+    color: #7d2500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .pricing-cta {
+    width: 100%;
+    background: var(--coral);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(255, 107, 71, 0.35);
+  }
+
+  .pricing-cta:hover {
+    background: var(--coral-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(255, 107, 71, 0.45);
+  }
+
+  .pricing-guarantee {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--brown-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .pricing-right {
+    color: rgba(255,255,255,0.85);
+  }
+
+  .pricing-right h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .who-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .who-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .who-bullet {
+    width: 8px;
+    height: 8px;
+    background: var(--coral);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── FAQ ── */
+  .faq-list {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--sand);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .faq-item:hover { box-shadow: 0 4px 16px rgba(45,31,20,0.06); }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    text-align: left;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--brown);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--coral-pale);
+    color: var(--coral);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--brown-mid);
+    line-height: 1.7;
+    padding: 0 24px;
+    font-family: 'Lora', serif;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding: 0 24px 24px;
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-final {
+    background: linear-gradient(135deg, #7d2500 0%, #b26151 100%);
+    text-align: center;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 250px; height: 250px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+
+  .cta-final::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -40px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+
+  .cta-final h2 {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-final p {
+    font-family: 'Lora', serif;
+    color: rgba(255,255,255,0.85);
+    font-size: 1.05rem;
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--coral);
+    border: none;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #3a1200;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 28px 40px;
+    font-size: 0.82rem;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+    .hero-card { max-width: 480px; }
+    .pricing-layout { grid-template-columns: 1fr; gap: 32px; }
+    nav { padding: 16px 20px; }
+    .proof-strip { gap: 20px; padding: 16px 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .section-inner { padding: 60px 20px; }
+    .hero { padding: 100px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Diagnostic<span>Express</span></div>
+  <a href="#pricing" class="nav-cta">Je veux mon diagnostic →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">✦ Instagram · Résultat sous 48h</div>
+      <h1>Ton compte Instagram a du potentiel.<br>Débloque-le en <em>48h</em>.</h1>
+      <p class="hero-sub">
+        Une analyse vidéo complète de ton profil Instagram par une CM professionnelle pour savoir exactement quoi corriger et quoi amplifier.
+      </p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn-primary">
+          Obtenir mon diagnostic
+          <span class="arrow">→</span>
+        </a>
+        <div class="hero-note">🔒 Paiement sécurisé</div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="card-label">Ce que tu reçois</div>
+      <div class="card-title">Diagnostic Express</div>
+      <div class="card-platform">📱 Analyse Instagram uniquement</div>
+      <div class="card-items">
+        <div class="card-item">
+          <div class="card-item-icon">✓</div>
+          Vidéo Loom 5–10 min
+        </div>
+        <div class="card-item">
+          <div class="card-item-icon">✓</div>
+          3 points forts identifiés
+        </div>
+        <div class="card-item">
+          <div class="card-item-icon">✓</div>
+          3 axes prioritaires
+        </div>
+        <div class="card-item">
+          <div class="card-item-icon">✓</div>
+          Checklist bio complète ✅
+        </div>
+        <div class="card-item">
+          <div class="card-item-icon">✓</div>
+          1 action à appliquer immédiatement
+        </div>
+        <div class="card-item">
+          <div class="card-item-icon">✓</div>
+          1 erreur critique à corriger
+        </div>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-price-row">
+        <div style="font-size:0.9rem; color: var(--brown-light);">Paiement unique</div>
+        <div class="card-delivery">⏱ Livré sous<br>24 à 48h</div>
+      </div>
+      <a href="#pricing" class="card-btn">Réserver mon diagnostic →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item"><span class="proof-icon">⚡</span> Résultat sous 24–48h</div>
+  <div class="proof-item"><span class="proof-icon">🎥</span> Format vidéo Loom</div>
+  <div class="proof-item"><span class="proof-icon">💬</span> Conseils concrets & actionnables</div>
+  <div class="proof-item"><span class="proof-icon">💶</span> Accessible à petit budget</div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="section-inner">
+    <div class="section-tag reveal">Le problème</div>
+    <h2 class="section-title reveal">Tu postes, mais ça ne décolle pas.<br>Pourquoi ?</h2>
+    <p class="section-sub reveal">
+      Tu investis du temps sur Instagram, tu crées du contenu… mais le résultat n'est pas là. Souvent, c'est un détail qui bloque tout.
+    </p>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <span class="pain-emoji">😰</span>
+        <h3>Tu ne sais pas par où commencer</h3>
+        <p>Bio, visuels, hashtags, format… tout semble important et tu tournes en rond sans vrai cap.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-emoji">📉</span>
+        <h3>Tes stats stagnent</h3>
+        <p>Tu publies régulièrement mais l'audience ne grossit pas, les ventes ne viennent pas.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-emoji">💸</span>
+        <h3>Pas les moyens d'un accompagnement long</h3>
+        <p>Les formations à 500€+ ou les retainers mensuels, c'est hors budget. Tu veux un vrai regard pro, au bon prix.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-emoji">🤯</span>
+        <h3>Trop de conseils contradictoires</h3>
+        <p>YouTube, TikTok, podcasts… tu en peux plus des tips génériques qui ne s'appliquent pas à TON compte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag reveal">Ce que tu reçois</div>
+    <h2 class="section-title reveal">Un diagnostic complet,<br>livré en vidéo</h2>
+    <p class="section-sub reveal">
+      Pas de template générique. J'analyse <strong>ton</strong> compte, avec mes yeux de CM, et je t'envoie un Loom avec tout ce qu'il faut savoir.
+    </p>
+    <div class="deliverables-grid">
+      <div class="deliverable reveal">
+        <div class="deliverable-num">🎥</div>
+        <div class="deliverable-body">
+          <h3>Vidéo Loom 5–10 min</h3>
+          <p>Une analyse parlée de ton profil, à ton rythme, que tu pourras réécouter autant de fois que tu veux.</p>
+        </div>
+      </div>
+      <div class="deliverable reveal">
+        <div class="deliverable-num">💪</div>
+        <div class="deliverable-body">
+          <h3>3 points forts</h3>
+          <p>Ce que tu fais déjà bien et sur quoi capitaliser pour accélérer ta croissance.</p>
+        </div>
+      </div>
+      <div class="deliverable reveal">
+        <div class="deliverable-num">🎯</div>
+        <div class="deliverable-body">
+          <h3>3 axes prioritaires</h3>
+          <p>Les leviers les plus impactants à travailler en priorité pour débloquer ta situation.</p>
+        </div>
+      </div>
+      <div class="deliverable reveal">
+        <div class="deliverable-num">✅</div>
+        <div class="deliverable-body">
+          <h3>Checklist bio complète</h3>
+          <p>Ta bio passée au crible : nom, accroche, CTA, lien… Chaque élément évalué.</p>
+        </div>
+      </div>
+      <div class="deliverable reveal">
+        <div class="deliverable-num">⚡</div>
+        <div class="deliverable-body">
+          <h3>1 action immédiate</h3>
+          <p>Une recommandation prioritaire que tu peux appliquer dès aujourd'hui pour voir un effet rapidement.</p>
+        </div>
+      </div>
+      <div class="deliverable reveal">
+        <div class="deliverable-num">🚨</div>
+        <div class="deliverable-body">
+          <h3>1 erreur critique</h3>
+          <p>L'élément qui freine probablement ta croissance sans que tu t'en rendes compte. On le corrige ensemble.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-inner">
+    <div class="section-tag reveal">Comment ça se passe</div>
+    <h2 class="section-title reveal">Simple, rapide, efficace</h2>
+    <p class="section-sub reveal">
+      En 3 étapes, tu passes de "je ne sais pas quoi faire" à "j'ai un plan clair".
+    </p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>Tu commandes & tu partages ton compte</h3>
+          <p>Tu règles en ligne et tu m'envoies le lien de ton profil Instagram public + quelques mots sur tes objectifs.</p>
+          <span class="step-badge">⏱ 2 minutes</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>J'analyse ton compte en détail</h3>
+          <p>Je passe ton profil au microscope : bio, visuels, stratégie de contenu, cohérence, call-to-action, et plus encore.</p>
+          <span class="step-badge">✨ Analyse pro personnalisée</span>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>Tu reçois ta vidéo sous 24–48h</h3>
+          <p>Un lien Loom avec ton analyse complète arrive dans ta boîte mail. Tu écoutes, tu appliques, tu vois les résultats.</p>
+          <span class="step-badge">🚀 Résultats rapides</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <div class="section-tag reveal">L'offre</div>
+    <h2 class="section-title reveal">Un tarif accessible.<br>Une valeur réelle.</h2>
+    <p class="section-sub reveal">
+      Les formations à + de 1000€ ou les accompagnements mensuels, c'est hors budget. Tu veux un vrai regard pro, au bon prix.
+    </p>
+    <div class="pricing-layout reveal">
+      <div class="pricing-card">
+        <div class="pricing-blob"></div>
+        <div class="pricing-name">Diagnostic Express</div>
+        <div class="pricing-once">Paiement unique · Pas d'abonnement</div>
+        <div class="pricing-features">
+          <div class="pricing-feat"><div class="check">✓</div> Vidéo Loom 5–10 min</div>
+          <div class="pricing-feat"><div class="check">✓</div> 3 points forts</div>
+          <div class="pricing-feat"><div class="check">✓</div> 3 axes prioritaires</div>
+          <div class="pricing-feat"><div class="check">✓</div> Checklist bio complète</div>
+          <div class="pricing-feat"><div class="check">✓</div> 1 action immédiate</div>
+          <div class="pricing-feat"><div class="check">✓</div> 1 erreur critique identifiée</div>
+          <div class="pricing-feat"><div class="check">✓</div> Livraison sous 24 à 48h</div>
+        </div>
+        <a href="#" class="pricing-cta">Je réserve mon Diagnostic Express →</a>
+        <div class="pricing-guarantee">🔒 Paiement sécurisé · Analyse 100% personnalisée</div>
+      </div>
+      <div class="pricing-right reveal">
+        <h3>Ce diagnostic est fait pour toi si…</h3>
+        <div class="who-list">
+          <div class="who-item"><div class="who-bullet"></div>Tu es entrepreneur·e et Instagram est un de tes canaux de vente</div>
+          <div class="who-item"><div class="who-bullet"></div>Tu es créateur·rice de contenu et tu veux mieux comprendre ce qui bloque</div>
+          <div class="who-item"><div class="who-bullet"></div>Tu gères un petit commerce et tu veux plus de visibilité locale</div>
+          <div class="who-item"><div class="who-bullet"></div>Tu n'as pas encore le budget pour un accompagnement mensuel</div>
+          <div class="who-item"><div class="who-bullet"></div>Tu veux des conseils concrets, pas de la théorie</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag reveal">Questions fréquentes</div>
+    <h2 class="section-title reveal">Tout ce que tu veux savoir</h2>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Mon compte doit-il être public ?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Oui, ton compte doit être en mode public pour que je puisse analyser ton profil correctement. Si tu es en compte privé, tu peux le passer en public le temps de l'analyse, puis le repasser en privé ensuite.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Sous quel format me sera envoyé le diagnostic ?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Tu reçois un lien Loom par email. La vidéo dure entre 5 et 10 minutes et tu peux la regarder autant de fois que tu le souhaites, à ton rythme.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Est-ce que ça marche si j'ai peu d'abonnés ?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Absolument ! Le diagnostic est encore plus utile en début de parcours. Je peux identifier les fondations à corriger avant de passer à la croissance.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Tu analyses quel type de compte ?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">Uniquement des comptes Instagram : créateurs de contenu, entrepreneurs, artisans, commerces locaux, e-commerces… Tant que tu vends ou que tu veux développer ta présence sur Insta, ce diagnostic est pour toi.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Que se passe-t-il après le diagnostic ?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          <p style="margin-bottom:12px">Tu as toutes les clés en main pour agir directement. Et si tu veux aller plus loin, découvre mon offre <strong>INSIGHT BOOST</strong>.</p>
+          <p style="margin-bottom:14px">Elle comprend un audit complet (positionnement, cible, branding visuel, stratégie de contenu, engagement…), un PDF structuré, un plan d'action 30 jours, une checklist de corrections, et un doc pour mieux comprendre Instagram avec des ressources Notion & Canva.</p>
+          <a href="LIEN_CALENDLY" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:white;padding:10px 20px;border-radius:50px;font-size:0.88rem;font-weight:700;text-decoration:none;transition:all 0.2s;">
+            📅 Prendre un appel pour en discuter →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>Prêt·e à enfin comprendre<br>ce qui bloque ton compte ?</h2>
+  <p>Un regard expert sur ton Instagram, livré sous 48h.</p>
+  <a href="#pricing" class="btn-white">
+    Je commande mon Diagnostic Express ✦
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Diagnostic Express · Tous droits réservés</p>
+</footer>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 60 * (Array.from(entry.target.parentElement.children).indexOf(entry.target) % 4));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
